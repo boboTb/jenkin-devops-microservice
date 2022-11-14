@@ -43,7 +43,7 @@ pipeline {
 		stage('Build Docker Image') {
 			steps {
 				script {
-					dockerImage = docker.build("bobohubdocker/currency-exchange-devops:$env.BUILD_NUMBER")
+					dockerImage = docker.build("bobohubdocker/currency-exchange-devops:$env.BUILD_TAG")
 				}
 			}
 		}
