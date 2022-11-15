@@ -57,5 +57,10 @@ pipeline {
 				}
 			}
 		}
+		stage('Remove Unused docker image') {
+      			steps{
+        			sh "docker rmi bobohubdocker/currency-exchange-devops:$env.BUILD_TAG"
+      			}
+    		}
 	}
 }
